@@ -9,6 +9,15 @@ test('Magician', () => {
   expect(received).toEqual(expected);
 });
 
+test('if true', () => {
+  const received = new Magician('Маг');
+  received.toBeStoned = true;
+  const expected = {
+    name: 'Маг', type: 'Magician', attack: 50, stoned: false,
+  };
+  expect(received).toEqual(expected);
+});
+
 test('Magician with attack', () => {
   const received = new Magician('Маг');
   received.attackSection = 5;
@@ -45,7 +54,7 @@ test('Magician throw "attack to little"', () => {
 test('Daemon', () => {
   const received = new Daemon('Демон');
   const expected = {
-    name: 'Демон', type: 'Daemon', attack: 70, stoned: false,
+    name: 'Демон', type: 'Daemon', attack: 50, stoned: false,
   };
   expect(received).toEqual(expected);
 });
@@ -54,7 +63,7 @@ test('Daemon with attack', () => {
   const received = new Daemon('Демон');
   received.attackSection = 5;
   const expected = {
-    name: 'Демон', type: 'Daemon', attack: 42, stoned: false,
+    name: 'Демон', type: 'Daemon', attack: 30, stoned: false,
   };
   expect(received).toEqual(expected);
 });
@@ -64,7 +73,7 @@ test('Daemon with attack and stoned', () => {
   received.toBeStoned = true;
   received.attackSection = 5;
   const expected = {
-    name: 'Демон', type: 'Daemon', attack: 30, stoned: true,
+    name: 'Демон', type: 'Daemon', attack: 18, stoned: true,
   };
   expect(received).toEqual(expected);
 });
