@@ -1,4 +1,5 @@
-import { Magician, Daemon } from './js/Characters';
+import Magician from './js/magician';
+import Daemon from './js/daemon';
 /* eslint-disable no-console */
 const magician = new Magician('Маг');
 

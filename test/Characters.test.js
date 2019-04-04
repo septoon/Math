@@ -1,5 +1,6 @@
 /* eslint-disable no-return-assign */
-import { Magician, Daemon } from '../src/js/Characters';
+import Magician from '../src/js/magician';
+import Daemon from '../src/js/daemon';
 
 test('Magician', () => {
   const received = new Magician('Маг');
@@ -13,7 +14,7 @@ test('if true', () => {
   const received = new Magician('Маг');
   received.toBeStoned = true;
   const expected = {
-    name: 'Маг', type: 'Magician', attack: 50, stoned: false,
+    name: 'Маг', type: 'Magician', attack: 50, stoned: true,
   };
   expect(received).toEqual(expected);
 });
